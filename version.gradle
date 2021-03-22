@@ -1,0 +1,127 @@
+def builds = [:]
+builds.min = 19
+builds.target = 30
+builds.compile = 30
+builds.buildTools = "30.0.1"
+builds.code = 20201017
+builds.name = "1.0.0"
+ext.builds = builds
+
+def addRepos(RepositoryHandler handler) {
+    handler.mavenLocal()
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/repositories/jcenter' }
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/repositories/google' }
+    handler.maven { url 'http://maven.aliyun.com/nexus/content/repositories/gradle-plugin' }
+//    handler.google()
+//    handler.jcenter()
+
+}
+
+ext.addRepos = this.&addRepos
+/**************************************************************************************************/
+ext.deps = [:]
+def deps = [:]
+ext.deps = deps
+
+def kotlin = [:]
+kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib:1.4.31"
+kotlin.reflect = "org.jetbrains.kotlin:kotlin-reflect:1.4.31"
+kotlin.test = "org.jetbrains.kotlin:kotlin-test-junit:1.4.31"
+kotlin.plugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:1.4.31"
+kotlin.allopen = "org.jetbrains.kotlin:kotlin-allopen:1.4.31"
+deps.kotlin = kotlin
+
+def arouter = [:]
+arouter.api = 'com.alibaba:arouter-api:1.5.0'
+arouter.compiler = 'com.alibaba:arouter-compiler:1.2.2'
+arouter.plugin = 'com.alibaba:arouter-register:1.0.2'
+deps.arouter = arouter
+
+def androidx = [:]
+androidx.ktx = "androidx.core:core-ktx:1.3.2"
+androidx.recyclerview = "androidx.recyclerview:recyclerview:1.0.0"
+androidx.appcompat = "androidx.appcompat:appcompat:1.1.0"
+androidx.constraint = "androidx.constraintlayout:constraintlayout:2.0.2"
+androidx.legacy = "androidx.legacy:legacy-support-v4:1.0.0"
+androidx.fragment_ktx = "androidx.fragment:fragment-ktx:1.1.0-alpha09"
+androidx.swiperefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+deps.androidx = androidx
+
+def room = [:]
+room.ktx = "androidx.room:room-ktx:2.2.5"
+room.compiler = "androidx.room:room-compiler:2.2.5"
+deps.room = room
+
+def nav = [:]
+nav.fragmennt = 'androidx.navigation:navigation-fragment:2.3.1'
+nav.fragmennt_ktx = 'androidx.navigation:navigation-fragment-ktx:2.3.1'
+nav.ui = 'androidx.navigation:navigation-ui:2.3.1'
+nav.ui_ktx = 'androidx.navigation:navigation-ui-ktx:2.3.1'
+deps.nav = nav
+
+def lifecycle = [:]
+lifecycle.viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0"
+lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:2.2.0"
+lifecycle.livedata_ktx = "androidx.lifecycle:lifecycle-livedata-ktx:2.2.0"
+deps.lifecycle = lifecycle
+
+def paging = [:]
+paging.runtime = 'androidx.paging:paging-runtime:3.0.0-alpha07'
+deps.paging = paging
+
+def google = [:]
+google.material = 'com.google.android.material:material:1.2.1'
+google.gson='com.google.code.gson:gson:2.8.4'
+deps.google = google
+
+def glide = [:]
+glide.core = 'com.github.bumptech.glide:glide:4.11.0'
+glide.compiler = 'com.github.bumptech.glide:compiler:4.11.0'
+deps.glide = glide
+
+def okhttp = [:]
+okhttp.core = 'com.squareup.okhttp3:okhttp:4.9.0'
+deps.okhttp = okhttp
+
+deps.gson = "com.google.code.gson:gson:2.8.6"
+deps.gradle = "com.android.tools.build:gradle:4.1.2"
+
+/**************************************************************************************************/
+deps.libs = [
+        ':lib_arch',':lib_download',':lib_support',':lib_hotfix',':lib_player',
+        ':lib_music_ui',':lib_video_ui',':lib_ct_base'
+]
+
+deps.modules = [
+        ':ct_splash',':ct_gallery', ':ct_manager', ':ct_player'
+]
+
+deps.dependencies = [
+        deps.kotlin.stdlib,
+
+        deps.androidx.recyclerview,
+        deps.androidx.ktx,
+        deps.androidx.appcompat,
+        deps.androidx.constraint,
+        deps.androidx.recyclerview,
+        deps.androidx.fragment_ktx,
+        deps.androidx.swiperefresh,
+        deps.paging.runtime,
+
+        deps.nav.fragmennt,
+        deps.nav.fragmennt_ktx,
+        deps.nav.ui,
+        deps.nav.ui_ktx,
+
+        deps.lifecycle.viewmodel_ktx,
+        deps.lifecycle.extensions,
+        deps.lifecycle.livedata_ktx,
+
+        deps.paging.runtime,
+        deps.google.material,
+        deps.google.gson,
+
+        deps.arouter.api,
+        deps.glide.core
+]
