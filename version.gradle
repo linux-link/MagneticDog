@@ -86,6 +86,7 @@ deps.okhttp = okhttp
 
 deps.gson = "com.google.code.gson:gson:2.8.6"
 deps.gradle = "com.android.tools.build:gradle:4.1.2"
+deps.multidex= 'com.android.support:multidex:1.0.3'
 
 /**************************************************************************************************/
 deps.libs = [
@@ -123,5 +124,6 @@ deps.dependencies = [
         deps.google.gson,
 
         deps.arouter.api,
-        deps.glide.core
+        deps.glide.core,
+        deps.multidex
 ]

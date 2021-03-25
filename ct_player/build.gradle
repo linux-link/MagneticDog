@@ -21,6 +21,7 @@ android {
         versionCode builds.code
         versionName builds.name
         consumerProguardFiles "consumer-rules.pro"
+        multiDexEnabled true
     }
     //ARouter配置
     kapt {
