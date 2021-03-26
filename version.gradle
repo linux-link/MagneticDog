@@ -90,8 +90,7 @@ deps.multidex= 'com.android.support:multidex:1.0.3'
 
 /**************************************************************************************************/
 deps.libs = [
-        ':lib_arch',':lib_download',':lib_support',':lib_hotfix',':lib_player',
-        ':lib_music_ui',':lib_video_ui',':lib_ct_base'
+        ':lib_arch',':lib_download',':lib_support',':lib_hotfix',':lib_multimeida',':lib_ct_base'
 ]
 
 deps.modules = [

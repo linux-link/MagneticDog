@@ -16,10 +16,8 @@
             <option value="$PROJECT_DIR$/lib_ct_base" />
             <option value="$PROJECT_DIR$/lib_download" />
             <option value="$PROJECT_DIR$/lib_hotfix" />
-            <option value="$PROJECT_DIR$/lib_music_ui" />
-            <option value="$PROJECT_DIR$/lib_player" />
+            <option value="$PROJECT_DIR$/lib_multimeida" />
             <option value="$PROJECT_DIR$/lib_support" />
-            <option value="$PROJECT_DIR$/lib_video_ui" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
