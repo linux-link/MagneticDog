@@ -1,4 +1,4 @@
-package com.wj.lib.multimedia;
+package com.wj.lib.multimedia.widget;
 
 import android.content.Context;
 import android.util.AttributeSet;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.wj.lib.multimedia.R;
 import com.wj.lib.multimedia.databinding.LayoutMusicActionControlBarBinding;
 
 public class MusicActionControlLayout extends ConstraintLayout {

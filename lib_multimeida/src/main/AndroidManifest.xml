@@ -2,4 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.wj.lib.multimedia">
 
+    <application>
+
+        <service
+            android:name=".MusicService"
+            android:process=":media"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.media.browse.MediaBrowserService"/>
+            </intent-filter>
+        </service>
+
+    </application>
+
 </manifest>

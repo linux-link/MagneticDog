@@ -46,6 +46,7 @@ androidx.constraint = "androidx.constraintlayout:constraintlayout:2.0.2"
 androidx.legacy = "androidx.legacy:legacy-support-v4:1.0.0"
 androidx.fragment_ktx = "androidx.fragment:fragment-ktx:1.1.0-alpha09"
 androidx.swiperefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+androidx.media = "androidx.media:media:1.2.0"
 deps.androidx = androidx
 
 def room = [:]
@@ -107,6 +108,7 @@ deps.dependencies = [
         deps.androidx.recyclerview,
         deps.androidx.fragment_ktx,
         deps.androidx.swiperefresh,
+        deps.androidx.media,
         deps.paging.runtime,
 
         deps.nav.fragmennt,
