@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ClearEditText">
+        <attr name="clearIcon" format="reference" />
+        <attr name="scaleSize" format="float" />
+        <attr name="drawableWidth" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="StateButton">
+        <attr name="state_normal" format="reference" />
+        <attr name="state_pressed" format="reference" />
+        <attr name="state_disable" format="reference" />
+        <attr name="state_other" format="reference" />
+        <attr name="default_state">
+            <enum name="disable" value="0" />
+            <enum name="normal" value="1" />
+            <enum name="pressed" value="2" />
+            <enum name="other" value="3" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="TabLayout">
+        <attr name="indicatorStartColor" format="color|reference" />
+        <attr name="indicatorEndColor" format="color|reference" />
+        <attr name="indicatorMarginStart" format="dimension|reference" />
+        <attr name="indicatorMarginEnd" format="dimension|reference" />
+        <attr name="indicatorMarginBottom" format="dimension|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="MaterialSwitch">
+        <attr name="material_color" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="DigitView">
+        <attr name="textSize" format="dimension" />
+        <attr name="cornersSize" format="dimension" />
+        <attr name="dividerSize" format="dimension" />
+        <attr name="textColor" format="color|reference" />
+        <attr name="boardColor" format="color|reference" />
+        <attr name="dividerColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="FlipClockView">
+        <attr name="digit_textSize" format="dimension" />
+        <attr name="digit_dividerSize" format="dimension" />
+        <attr name="digit_dividerColor" format="color|reference" />
+        <attr name="digit_cornersSize" format="dimension" />
+        <attr name="digit_textColor" format="color|reference" />
+        <attr name="digit_boardColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="PointerClockView">
+        <attr name="hourHandColor" format="color|reference" />
+        <attr name="minuteHandColor" format="color|reference" />
+        <attr name="secondHandColor" format="color|reference" />
+        <attr name="scaleColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TimerClockView">
+        <attr name="timer_PointColor" format="color|reference" />
+        <attr name="timer_scaleColor" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="CompassClockView">
+        <attr name="compass_format_color" format="color|reference" />
+        <attr name="compass_minute_color" format="color|reference" />
+        <attr name="compass_second_color" format="color|reference" />
+    </declare-styleable>
+
+    <declare-styleable name="TabLayout2">
+
+    </declare-styleable>
+
+</resources>

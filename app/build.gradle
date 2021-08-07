@@ -1,0 +1,71 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion builds.compile
+    buildToolsVersion builds.buildTools
+
+    defaultConfig {
+        applicationId "com.wujia.magneticdog"
+        minSdkVersion builds.min
+        targetSdkVersion builds.target
+        versionCode builds.code
+        versionName builds.name
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildFeatures {
+        dataBinding = true
+        compose = true
+    }
+
+    signingConfigs {
+        config {
+            storeFile file('office.keystore')
+            storePassword 'wujia0916'
+            keyAlias 'office.keystore'
+            keyPassword 'wujia0916'
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+
+        debug {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
+        }
+    }
+
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+
+    composeOptions{
+        kotlinCompilerExtensionVersion ver.compose
+        kotlinCompilerVersion ver.kotlin
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+}
+
+dependencies {
+    implementation deps.dependencies
+    deps.libs.each {
+        implementation project(path: it)
+    }
+}

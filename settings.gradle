@@ -1,0 +1,6 @@
+include ':lib_support' // 基础开发支持模块。包含性能优化、日志分析等功能
+include ':lib_ui'// 基础UI工具包。包含公用的UI widget
+include ':lib_jetpackTools' // 基于Jetpack封装的基础架构模块。包含项目公用的一些架构设计和工具类
+include ':lib_dog_base'  // 此项目的基础模块。包含此项目架构、UI资源等。该模块与业务强相关，一般不能公用
+include ':app'
+rootProject.name = 'MagneticDog'
