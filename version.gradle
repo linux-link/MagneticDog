@@ -9,8 +9,10 @@ ext.builds = builds
 
 def ver = [:]
 ver.compose = "1.0.0"
+ver.hilt = "1.0.0-alpha03"
 ver.kotlin = "1.5.10"
 ver.jetpack = "2.3.1"
+ver.room = "2.3.0"
 ver.gradle = "7.0.0"
 ext.ver = ver
 
@@ -58,8 +60,8 @@ androidx.swiperefresh = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 deps.androidx = androidx
 
 def room = [:]
-room.ktx = "androidx.room:room-ktx:2.2.5"
-room.compiler = "androidx.room:room-compiler:2.2.5"
+room.ktx = "androidx.room:room-ktx:${ver.room}"
+room.compiler = "androidx.room:room-compiler:${ver.room}"
 deps.room = room
 
 def nav = [:]
@@ -85,6 +87,13 @@ compose.ui_tooling = "androidx.compose.ui:ui-tooling-preview:${ver.compose}"
 compose.activity = "androidx.activity:activity-compose:1.3.0"
 deps.compose = compose
 
+def hilt = [:]
+hilt.lifecycle_viewmodel = "androidx.hilt:hilt-lifecycle-viewmodel:${ver.hilt}"
+hilt.work = "androidx.hilt:hilt-work:${ver.hilt}"
+hilt.compiler = "androidx.hilt:hilt-compiler:${ver.hilt}"
+hilt.plugin = "com.google.dagger:hilt-android-gradle-plugin:2.37"
+deps.hilt = hilt
+
 def paging = [:]
 paging.runtime = 'androidx.paging:paging-runtime:3.0.0-alpha07'
 deps.paging = paging
@@ -109,24 +118,10 @@ deps.gradle = "com.android.tools.build:gradle:${ver.gradle}"
 
 /**************************************************************************************************/
 deps.libs = [
-        ':lib_jetpackTools',':lib_jetpackTools',':lib_dog_base',':lib_support',':lib_ui'
+        ':lib_jetpackTools', ':lib_jetpackTools', ':lib_dog_base', ':lib_support', ':lib_ui'
 ]
 
 deps.dependencies = [
-        deps.jetpack.lifecycle_ktx,
-        deps.jetpack.lifecycle_common,
-        deps.jetpack.lifecycle_process,
-        deps.jetpack.viewmodel_ktx,
-        deps.jetpack.viewmodel_savedstate,
-        deps.jetpack.livedata_ktx,
-        deps.nav.fragmennt,
-        deps.nav.fragmennt_ktx,
-        deps.nav.ui,
-        deps.nav.ui_ktx,
-        deps.compose.ui,
-        deps.compose.ui_tooling,
-        deps.compose.material,
-
         deps.androidx.recyclerview,
         deps.androidx.ktx,
         deps.androidx.appcompat,
@@ -135,7 +130,31 @@ deps.dependencies = [
         deps.androidx.fragment_ktx,
         deps.androidx.swiperefresh,
 
+        deps.jetpack.lifecycle_ktx,
+        deps.jetpack.lifecycle_common,
+        deps.jetpack.lifecycle_process,
+        deps.jetpack.viewmodel_ktx,
+        deps.jetpack.viewmodel_savedstate,
+        deps.jetpack.livedata_ktx,
+
+        deps.hilt.lifecycle_viewmodel,
+        deps.hilt.work,
+
+        deps.nav.fragmennt,
+        deps.nav.fragmennt_ktx,
+        deps.nav.ui,
+        deps.nav.ui_ktx,
+
+        deps.compose.ui,
+        deps.compose.ui_tooling,
+        deps.compose.material,
+
         deps.google.material,
         deps.google.gson,
         deps.glide.core
+]
+
+deps.compiler = [
+        deps.hilt.compiler,
+        deps.room.compiler
 ]

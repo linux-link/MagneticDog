@@ -5,7 +5,8 @@ buildscript {
 
     dependencies {
         classpath deps.gradle
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.20"
+        classpath deps.kotlin.plugin
+        classpath deps.hilt.plugin
     }
 }
 

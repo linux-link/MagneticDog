@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/cardview_dark_background">
+
+
+    <ImageView
+        android:id="@+id/iv_play"
+        android:layout_width="60dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seek_progress"
+        app:srcCompat="@drawable/ic_media_play"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_previous"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_play"
+        app:layout_constraintStart_toEndOf="@+id/iv_play_type"
+        app:layout_constraintTop_toTopOf="@+id/iv_play"
+        app:srcCompat="@drawable/ic_media_previous"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_play_type"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_previous"
+        app:layout_constraintEnd_toStartOf="@+id/iv_previous"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_previous"
+        app:srcCompat="@drawable/ic_media_list_repeat"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_play_menu"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/iv_next"
+        app:layout_constraintTop_toTopOf="@+id/iv_next"
+        app:srcCompat="@drawable/ic_media_menu"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/iv_next"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:padding="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv_play_menu"
+        app:layout_constraintStart_toEndOf="@+id/iv_play"
+        app:layout_constraintTop_toBottomOf="@+id/seek_progress"
+        app:srcCompat="@drawable/ic_media_next"
+        tools:ignore="ContentDescription" />
+
+    <SeekBar
+        android:id="@+id/seek_progress"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@+id/tv_total_progress"
+        app:layout_constraintStart_toEndOf="@+id/tv_current_progress"
+        app:layout_constraintTop_toTopOf="@id/seek_progress" />
+
+    <TextView
+        android:id="@+id/tv_current_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seek_progress"
+        app:layout_constraintStart_toStartOf="@+id/iv_play_type"
+        app:layout_constraintTop_toTopOf="@+id/seek_progress" />
+
+    <TextView
+        android:id="@+id/tv_total_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/seek_progress"
+        app:layout_constraintEnd_toEndOf="@+id/iv_play_menu"
+        app:layout_constraintTop_toTopOf="@+id/seek_progress"
+        app:layout_constraintVertical_bias="0.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
